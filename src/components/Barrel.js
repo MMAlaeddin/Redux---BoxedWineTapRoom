@@ -10,6 +10,7 @@ function Barrel(props){
       <h5>{props.brand}</h5>
       <h5>{props.price}</h5>
       <h5>{props.alcoholContent}</h5>
+      <h5>{props.quantity}</h5>
       </div>
     </React.Fragment>
   );
@@ -20,6 +21,7 @@ Barrel.propTypes = {
   brand: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,
   alcoholContent: PropTypes.number,
+  quantity: PropTypes.number,
   id: PropTypes.string,
   whenBarrelClicked: PropTypes.func
 };

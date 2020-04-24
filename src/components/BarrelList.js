@@ -13,6 +13,7 @@ function BarrelList(props) {
       name = {barrel.name}
       price = {barrel.price}
       alcoholContent = {barrel.alcoholContent}
+      quantity = {barrel.quantity}
       id = {barrel.id}
       key = {barrel.id} />
       )}

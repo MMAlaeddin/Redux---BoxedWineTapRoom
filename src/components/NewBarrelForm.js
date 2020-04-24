@@ -11,6 +11,7 @@ function NewBarrelForm(props) {
       name: event.target.name.value,
       price: event.target.price.value,
       alcoholContent: event.target.alcoholContent.value,
+      quantity: event.target.quantity.value,
       id: v4()
     });
   }
