@@ -9,6 +9,7 @@ function BarrelList(props) {
       {props.barrelList.map((barrel) => 
       <Barrel
       whenBarrelClicked = {props.onBarrelSelection}
+      whenSellBottleClicked = {props.onClickingSellBottle}
       type = {barrel.type}
       name = {barrel.name}
       price = {barrel.price}
@@ -24,6 +25,7 @@ function BarrelList(props) {
 BarrelList.propTypes = {
   barrelList: PropTypes.array,
   onBarrelSelection: PropTypes.func
+  
 };
 
 export default BarrelList; 

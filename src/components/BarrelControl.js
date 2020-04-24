@@ -48,7 +48,7 @@ class BarrelControl extends React.Component {
     });
   }
 
-  handleSellingBottlesFromBarrel = (id) => {
+  handleSellingBottleFromBarrel = (id) => {
     const currentlySelectedBarrel = this.state.masterBarrelList.filter(barrel => barrel.id === id)[0];
     const newBarrelVolume = currentlySelectedBarrel.quantity - 1;
     const updatedList = currentlySelectedBarrel.concat(newBarrelVolume);
