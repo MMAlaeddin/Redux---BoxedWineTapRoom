@@ -10,7 +10,7 @@ A tap room in React where a bar or kombucha store can track their kegs.
 
 ## Component Tree
 
-<img src="./img/componenttree.png>
+<img src="./img/componenttree.png">
 
 ## Specs
 
