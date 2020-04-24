@@ -8,6 +8,10 @@
 
 A tap room in React where a bar or kombucha store can track their kegs.
 
+## Component Tree
+
+![Image description](./components/img/componenttree.png)
+
 ## Specs
 
 * User ability to view list of all kegs available with name, brand, price and ABV.
