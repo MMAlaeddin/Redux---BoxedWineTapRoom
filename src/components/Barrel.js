@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 function Barrel(props){
 
   const itemStyles = {
-    height: '210px',
+    height: '270px',
     width: '150px',
     border: '10px solid purple',
     textAlign: 'center',
@@ -24,7 +24,7 @@ function Barrel(props){
       <h5>Cost: ${props.price}</h5>
       <h5>ABV: {props.alcoholContent}%</h5>
       <h5>Amount of bottles in stock: {props.quantity}</h5>
-      <button onClick={()=> props.whenSellBottleClicked(props.id)} type="submit">Sell a Bottle</button>
+      <button onClick={()=> props.whenSellBottleClicked(props.id)} type="submit">Sell Bottle</button>
       </div>
       </div>
     </React.Fragment>
