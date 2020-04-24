@@ -9,7 +9,7 @@ function Barrel(props){
     border: '10px solid purple',
     textAlign: 'center',
     padding: '2%',
-    marginBottom: '1em',
+    marginBottom: '3em',
     color: 'white',
     background: 'gray',
   }
