@@ -3,7 +3,7 @@ import React from "react";
 function Header() {
   return(
     <React.Fragment>
-      <h1>Boxed Wine Tap Brewm</h1>
+      <h1 class="header">Boxed Wine Tap Room</h1>
     </React.Fragment>
   );
 }
