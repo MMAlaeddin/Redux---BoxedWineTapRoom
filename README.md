@@ -1,3 +1,14 @@
+# National Parks API Application
+
+
+
+#### By: **Mariam Alaeddin**, April 24, 2020
+
+## Description
+
+A tap room in React where a bar or kombucha store can track their kegs.
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
