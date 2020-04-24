@@ -8,6 +8,13 @@
 
 A tap room in React where a bar or kombucha store can track their kegs.
 
+## Specs
+
+* User ability to view list of all kegs available with name, brand, price and ABV.
+* User may add new kegs by submitting form.
+* User may view amount of content left in keg.
+* User may deduct pints from total keg content.
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
