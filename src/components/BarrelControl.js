@@ -1,7 +1,8 @@
 import React from "react";
+import NewBarrelForm from "./NewBarrelForm";
 import BarrelList from "./BarrelList";
+import EditBarrelForm from './EditBarrelForm';
 import BarrelDetail from './BarrelDetail';
-import NewBarrelForm from './NewBarrelForm';
 
 class BarrelControl extends React.Component {
   constructor(props) {
@@ -9,15 +10,17 @@ class BarrelControl extends React.Component {
     this.state = {
       formVisibleOnPage: false,
       masterBarrelList: [],
-      selectedBarrel: null
+      selectedBarrel: null,
+      editing: false
     };
   }
 
   handleClick = () => {
-    if(this.state.selectedBarrel !== null) {
+    if(this.state.selectedBarrel != null) {
       this.setState({
         formVisibleOnPage: false,
-        selectedBarrel: null
+        selectedBarrel: null,
+        editing: false
       });
     } else {
       this.setState(prevState => ({
@@ -37,24 +40,58 @@ class BarrelControl extends React.Component {
     this.setState({selectedBarrel: selectedBarrel});
   }
 
+  handleDeletingBarrel = (id) => {
+    const newMasterBarrelList = this.state.masterBarrelList.filter(barrel => barrel.id !== id);
+    this.setState({
+      masterBarrelList: newMasterBarrelList,
+      selectedBarrel: null
+    });
+  }
+
+  handleEditClick = () => {
+    this.setState({editing: true});
+  }
+
+  handleEditingBarrelInList = (barrelToEdit) => {
+    const editedMasterBarrelList = this.state.masterBarrelList
+      .filter(barrel => barrel.id !== this.state.selectedBarrel.id)
+      .concat(barrelToEdit);
+    this.setState({
+      masterBarrelList: editedMasterBarrelList,
+      editing: false,
+      selectedBarrel: null
+    });
+  }
+
 
   render() {
     let currentlyVisibleState = null;
     let buttonText = null;
 
-    if(this.state.selectedBarrel != null) {
-        currentlyVisibleState = <BarrelDetail
-          barrel = {this.state.selectedBarrel} />
-        buttonText = "Return to Barrel Stock List";
+    if (this.state.editing) {
+      currentlyVisibleState = <EditBarrelForm 
+        barrel = {this.state.selectedBarrel}
+        onEditBarrel = {this.handleEditingBarrelInList} />
+      buttonText = "return to Barrels";
+    } else if (this.state.selectedBarrel != null) {
+      currentlyVisibleState = <BarrelDetail 
+        barrel = {this.state.selectedBarrel} 
+        onClickingDelete = {this.handleDeletingBarrel}
+        onClickingEdit = {this.handleEditClick} />
+      buttonText = "return to Barrels";
     } else if (this.state.formVisibleOnPage) {
-      currentlyVisibleState = <NewBarrelForm
-        onNewBarrelCreation = {this.handleAddingNewBarrelToList} />
-        buttonText = "Return to Barrel Stock List";
+      currentlyVisibleState = <NewBarrelForm 
+        onNewBarrelCreation={this.handleAddingNewBarrelToList}/>
+      buttonText = "return to Barrels";
     } else {
-      currentlyVisibleState = <BarrelList
-        barrelList = {this.state.masterBarrelList} />
-      buttonText = "Add A Barrel";
+      currentlyVisibleState = <BarrelList 
+        barrelList={this.state.masterBarrelList} 
+        onBarrelSelection={this.handleChangingSelectedBarrel}
+        onClickingBuy={this.handleBarrelPurchase}
+        onClickingRestock={this.handleBarrelRestock} />
+      buttonText = "Add";
     }
+
 
     return (
       <React.Fragment> 
