@@ -11,6 +11,7 @@ function Barrel(props){
       <h5>{props.price}</h5>
       <h5>{props.alcoholContent}</h5>
       <h5>{props.quantity}</h5>
+      <button onClick={()=> props.whenSellBottleClicked(props.id)} type="submit">Sell a Bottle</button>
       </div>
     </React.Fragment>
   );
@@ -23,7 +24,8 @@ Barrel.propTypes = {
   alcoholContent: PropTypes.string.isRequired,
   quantity: PropTypes.number,
   id: PropTypes.string,
-  whenBarrelClicked: PropTypes.func
+  whenBarrelClicked: PropTypes.func,
+  whenSellBottleClicked: PropTypes.func
 };
 
 export default Barrel; 
