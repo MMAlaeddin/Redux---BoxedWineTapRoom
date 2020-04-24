@@ -1,11 +1,11 @@
 button {
-  border-radius: 12px;
-  background-color: purple;
+  background-color: rgb(134, 0, 134);
   color: white;
-  margin-left: 600px;
-  margin-top: 50px;
-  padding: 5px 10px 45px 60px;
-  text-align: center;
+  border-radius: 8px;
+  border: none;
+  padding: 15px;
+  margin-left: 70%;
+  margin-top: 10%;
 }
 
 button:hover {
@@ -24,7 +24,10 @@ body {
 }
 
 .header {
-  text-align: right;
-color: rgb(170, 138, 170)
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin-left: 60%;
+
+
+  color: rgb(170, 138, 170)
 }
 
