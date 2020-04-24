@@ -2,16 +2,30 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function Barrel(props){
+
+  const itemStyles = {
+    height: '210px',
+    width: '150px',
+    border: '10px solid purple',
+    textAlign: 'center',
+    padding: '2%',
+    marginBottom: '1em',
+    color: 'white',
+    background: 'gray',
+    font: 'Lucida Sans Regular'
+  }
   
   return (
     <React.Fragment>
       <div onClick = {() => props.whenBarrelClicked(props.id)}>
-      <h3>{props.type}</h3>
-      <h5>{props.name}</h5>
-      <h5>{props.price}</h5>
-      <h5>{props.alcoholContent}</h5>
-      <h5>{props.quantity}</h5>
+      <div style={itemStyles}>
+      <h3>Type of Wine: {props.type}</h3>
+      <h5>Vinyard Name: {props.name}</h5>
+      <h5>Cost: ${props.price}</h5>
+      <h5>ABV: {props.alcoholContent}%</h5>
+      <h5>Amount of bottles in stock: {props.quantity}</h5>
       <button onClick={()=> props.whenSellBottleClicked(props.id)} type="submit">Sell a Bottle</button>
+      </div>
       </div>
     </React.Fragment>
   );
