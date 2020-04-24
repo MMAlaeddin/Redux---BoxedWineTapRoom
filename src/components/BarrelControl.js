@@ -48,6 +48,12 @@ class BarrelControl extends React.Component {
     });
   }
 
+  handleSellingBottlesFromBarrel = (id) => {
+    const currentlySelectedBarrel = this.state.masterBarrelList.filter(barrel => barrel.id === id)[0];
+    const newBarrelAmount = currentlySelectedBarrel.quantity - 1;
+    
+  }
+
   handleEditClick = () => {
     this.setState({editing: true});
   }
@@ -89,7 +95,7 @@ class BarrelControl extends React.Component {
         onBarrelSelection={this.handleChangingSelectedBarrel}
         onClickingBuy={this.handleBarrelPurchase}
         onClickingRestock={this.handleBarrelRestock} />
-      buttonText = "Add";
+      buttonText = "Add a Barrel";
     }
 
 
