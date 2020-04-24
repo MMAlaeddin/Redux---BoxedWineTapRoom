@@ -24,7 +24,8 @@ function BarrelList(props) {
 
 BarrelList.propTypes = {
   barrelList: PropTypes.array,
-  onBarrelSelection: PropTypes.func
+  onBarrelSelection: PropTypes.func,
+  onClickingSellBottle: PropTypes.func
   
 };
 
