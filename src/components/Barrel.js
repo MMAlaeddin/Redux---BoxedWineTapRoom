@@ -7,7 +7,7 @@ function Barrel(props){
     <React.Fragment>
       <div onClick = {() => props.whenBarrelClicked(props.id)}>
       <h3>{props.type}</h3>
-      <h5>{props.brand}</h5>
+      <h5>{props.name}</h5>
       <h5>{props.price}</h5>
       <h5>{props.alcoholContent}</h5>
       <h5>{props.quantity}</h5>
@@ -18,7 +18,7 @@ function Barrel(props){
 
 Barrel.propTypes = {
   type: PropTypes.string.isRequired,
-  brand: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,
   alcoholContent: PropTypes.number,
   quantity: PropTypes.number,

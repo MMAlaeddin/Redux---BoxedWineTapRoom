@@ -28,10 +28,8 @@ class BarrelControl extends React.Component {
 
   handleAddingNewBarrelToList = (newBarrel) => {
     const newMasterBarrelList = this.state.masterBarrelList.concat(newBarrel);
-    this.setState({
-      masterBarrelList: newMasterBarrelList,
-      formVisibleOnPage: false
-    });
+    this.setState({ masterBarrelList: newMasterBarrelList });
+    this.setState({ formVisibleOnPage: false });
   }
 
 
@@ -61,3 +59,5 @@ class BarrelControl extends React.Component {
     );
   }
 }
+
+export default BarrelControl; 
