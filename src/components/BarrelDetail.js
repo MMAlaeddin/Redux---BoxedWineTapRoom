@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function BarrelDetail(props){
-  const { barrel } = props;
+  const { barrel, onClickingDelete } = props;
 
   return (
     <React.Fragment>
@@ -12,16 +12,16 @@ function BarrelDetail(props){
         <p>{barrel.alcoholContent}</p>
         <p>{barrel.quantity}</p>
 
-          {/* <button onClick={()=> onClickingDelete(barrel.id)}>Remove Barrel</button> */}
-        {/* <button onClick={ props.barrelList }>Back to Barrels</button> */}
+        <button onClick={()=> onClickingDelete(barrel.id)}>Remove Barrel</button> */}
+        <button onClick={ props.onClickingEdit }>Update Barrels</button>
     </React.Fragment>
   );
 }
 
 BarrelDetail.propTypes = {
-  barrel: PropTypes.object
-  // onClickingDelete: PropTypes.func,
-  // onClickingEdit: PropTypes.func
+  barrel: PropTypes.object,
+  onClickingDelete: PropTypes.func,
+  onClickingEdit: PropTypes.func
 };
 
 export default BarrelDetail;
