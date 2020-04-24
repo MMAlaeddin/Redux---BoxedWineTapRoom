@@ -20,7 +20,7 @@ Barrel.propTypes = {
   type: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,
-  alcoholContent: PropTypes.number,
+  alcoholContent: PropTypes.string.isRequired,
   quantity: PropTypes.number,
   id: PropTypes.string,
   whenBarrelClicked: PropTypes.func

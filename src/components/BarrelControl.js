@@ -39,16 +39,16 @@ class BarrelControl extends React.Component {
 
     if(this.state.selectedBarrel != null) {
         currentlyVisibleState = <BarrelDetail
-          barrel = {this.state.selectedBarrel}
-        buttonText = "Return to Barrel Stock List" />
+          barrel = {this.state.selectedBarrel} />
+        buttonText = "Return to Barrel Stock List";
     } else if (this.state.formVisibleOnPage) {
       currentlyVisibleState = <NewBarrelForm
-        onNewBarrelCreation = {this.handleAddingNewBarrelToList}
-        buttonText = "Return to Barrel Stock List" />
+        onNewBarrelCreation = {this.handleAddingNewBarrelToList} />
+        buttonText = "Return to Barrel Stock List";
     } else {
       currentlyVisibleState = <BarrelList
-        barrelList = {this.state.masterBarrelList}
-      buttonText = "Add A Barrel" />
+        barrelList = {this.state.masterBarrelList} />
+      buttonText = "Add A Barrel";
     }
 
     return (
