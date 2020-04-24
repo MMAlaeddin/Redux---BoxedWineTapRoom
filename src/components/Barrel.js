@@ -12,7 +12,6 @@ function Barrel(props){
     marginBottom: '1em',
     color: 'white',
     background: 'gray',
-    font: 'Lucida Sans Regular'
   }
   
   return (

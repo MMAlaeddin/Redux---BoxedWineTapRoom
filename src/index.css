@@ -5,7 +5,7 @@ button {
   border: none;
   padding: 15px;
   margin-left: 70%;
-  margin-top: 10%;
+  margin-top: 5%;
 }
 
 button:hover {
@@ -20,7 +20,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  color: black;
+  color: white;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
 }

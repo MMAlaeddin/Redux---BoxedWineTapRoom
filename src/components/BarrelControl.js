@@ -51,10 +51,14 @@ class BarrelControl extends React.Component {
   handleSellingBottleFromBarrel = (id) => {
     const currentlySelectedBarrel = this.state.masterBarrelList.filter(barrel => barrel.id === id)[0];
     const newBarrelVolume = currentlySelectedBarrel.quantity - 1;
-    const updatedList = currentlySelectedBarrel.concat(newBarrelVolume);
-    this.setState({masterBarrelList: updatedList});
+    const updatedBarrel = {...currentlySelectedBarrel, quantity: newBarrelVolume};
+    const aBarrelList = this.state.masterBarrelList.filter(barrel => barrel.id != id)
+    this.setState({
+      masterBarrelList: [...aBarrelList, updatedBarrel],
+      selectedBarrel: updatedBarrel
+    });
   }
-
+  
   handleEditClick = () => {
     this.setState({editing: true});
   }

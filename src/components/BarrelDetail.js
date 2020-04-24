@@ -6,11 +6,11 @@ function BarrelDetail(props){
 
   return (
     <React.Fragment>
-        <h1>{barrel.name}</h1>
-        <p>{barrel.type}</p>
-        <p>{barrel.price}</p>
-        <p>{barrel.alcoholContent}</p>
-        <p>{barrel.quantity}</p>
+        <h1>Vinyard Name: {barrel.name}</h1>
+        <p>Type of Wine: {barrel.type}</p>
+        <p>Price: ${barrel.price}</p>
+        <p>ABV: {barrel.alcoholContent}%</p>
+        <p>Quantity: {barrel.quantity}</p>
 
         <button onClick={()=> onClickingDelete(barrel.id)}>Remove Barrel</button> */}
         <button onClick={ props.onClickingEdit }>Update Barrels</button>
