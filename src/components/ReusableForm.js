@@ -21,6 +21,10 @@ function ReusableForm(props) {
         type="text"
         name="alcoholContent"
         placeholder="How boozy is it?" />
+        <input
+        type="text"
+        name="quantity"
+        placeholder="How many glasses" />
         <button type='submit'>{props.buttonText}</button>
       </form>
     </React.Fragment>

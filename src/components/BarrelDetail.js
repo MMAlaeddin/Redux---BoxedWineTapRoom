@@ -13,7 +13,7 @@ function BarrelDetail(props){
         <p>{barrel.quantity}</p>
 
           {/* <button onClick={()=> onClickingDelete(barrel.id)}>Remove Barrel</button> */}
-        <button onClick={ props.barrelList }>Back to Barrels</button>
+        {/* <button onClick={ props.barrelList }>Back to Barrels</button> */}
     </React.Fragment>
   );
 }

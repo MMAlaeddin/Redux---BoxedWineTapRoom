@@ -32,6 +32,11 @@ class BarrelControl extends React.Component {
     this.setState({ formVisibleOnPage: false });
   }
 
+  handleChangingSelectedBarrel = (id) => {
+    const selectedBarrel = this.state.masterBarrelList.filter(barrel => barrel.id === id)[0];
+    this.setState({selectedBarrel: selectedBarrel});
+  }
+
 
   render() {
     let currentlyVisibleState = null;
