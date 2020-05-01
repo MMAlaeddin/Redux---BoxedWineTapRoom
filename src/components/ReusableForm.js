@@ -7,7 +7,7 @@ function ReusableForm(props) {
       <form onSubmit={props.formSubmissionHandler}>
         <input
         type="text"
-        name="type"
+        name="wineType"
         placeholder="type of wine" />
         <input 
         type="text"
@@ -16,7 +16,7 @@ function ReusableForm(props) {
         <input
         type="text"
         name="price"
-        placeholder="price of wine by bottle" />
+        placeholder="price of wine by bottle" /> 
         <input
         type="text"
         name="alcoholContent"

@@ -7,7 +7,7 @@ function BarrelDetail(props){
   return (
     <React.Fragment>
         <h1>Vinyard Name: {barrel.name}</h1>
-        <p>Type of Wine: {barrel.type}</p>
+        <p>Type of Wine: {barrel.wineType}</p>
         <p>Price: ${barrel.price}</p>
         <p>ABV: {barrel.alcoholContent}%</p>
         <p>Quantity: {barrel.quantity}</p>

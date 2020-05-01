@@ -10,7 +10,7 @@ function BarrelList(props) {
       <Barrel
       whenBarrelClicked = {props.onBarrelSelection}
       whenSellBottleClicked = {props.onClickingSellBottle}
-      type = {barrel.type}
+      wineType = {barrel.wineType}
       name = {barrel.name}
       price = {barrel.price}
       alcoholContent = {barrel.alcoholContent}

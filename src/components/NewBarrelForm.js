@@ -7,7 +7,7 @@ function NewBarrelForm(props) {
   function handleNewBarrelFormSubmission(event) {
     event.preventDefault();
     props.onNewBarrelCreation({
-      type: event.target.type.value,
+      wineType: event.target.wineType.value,
       name: event.target.name.value,
       price: event.target.price.value,
       alcoholContent: event.target.alcoholContent.value,
