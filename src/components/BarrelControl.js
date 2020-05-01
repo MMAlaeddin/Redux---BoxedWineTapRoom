@@ -46,7 +46,7 @@ class BarrelControl extends React.Component {
   }
 
   handleSellingBottleFromBarrel = (id) => {
-    const currentlySelectedBarrel = this.props.masterBarrelList.filter(barrel => barrel.id === id)[0];
+    const currentlySelectedBarrel = this.state.masterBarrelList.filter(barrel => barrel.id === id)[0];
     const newBarrelVolume = currentlySelectedBarrel.quantity - 1;
     const updatedBarrel = {...currentlySelectedBarrel, quantity: newBarrelVolume};
     const aBarrelList = this.state.masterBarrelList.filter(barrel => barrel.id != id)
@@ -109,8 +109,6 @@ class BarrelControl extends React.Component {
   }
 }
 
-BarrelControl = connect(mapStateToProps)(BarrelControl);
-
 BarrelControl.propTypes = {
   masterBarrelList: PropTypes.object
 };
@@ -121,5 +119,6 @@ const mapStateToProps = state => {
     formVisibleOnPage: state.formVisibleOnPage
   }
 }
+BarrelControl = connect(mapStateToProps)(BarrelControl);
 
 export default BarrelControl; 
