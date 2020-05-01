@@ -4,7 +4,7 @@ import BarrelList from "./BarrelList";
 import EditBarrelForm from './EditBarrelForm';
 import BarrelDetail from './BarrelDetail';
 import { connect } from 'react-redux';
-// import { act } from "react-dom/test-utils";
+import * as a from './../actions';
 import PropTypes from "prop-types";
 
 
@@ -18,36 +18,17 @@ class BarrelControl extends React.Component {
   }
 
   handleClick = () => {
-    if(this.state.selectedBarrel != null) {
-      this.setState({
-        selectedBarrel: null,
-        editing: false
-      });
-    } else {
-      const { dispatch } = this.props;
-      const action = {
-        type: "TOGGLE_FORM"
-      }
-      dispatch(action);
-    }
+    const { dispatch } = this.props;
+    const action = a.toggleForm();
+    dispatch(action);
+    this.setState({selectedBarrel: null});
   }
 
   handleAddingNewBarrelToList = (newBarrel) => {
     const { dispatch } = this.props;
-    const { wineType, name, price, alcoholContent, quantity, id } = newBarrel;
-    const action = {
-      type: "ADD_BARREL",
-      wineType: wineType,
-      name: name,
-      price: price,
-      alcoholContent: alcoholContent,
-      quantity: quantity,
-      id: id,
-    }
+    const action = a.addBarrel(newBarrel);
     dispatch(action);
-    const action2 = {
-      type: "TOGGLE_FORM"
-    }
+    const action2 = a.toggleForm();
     dispatch(action2);
   }
 
@@ -57,14 +38,12 @@ class BarrelControl extends React.Component {
   }
 
   handleDeletingBarrel = (id) => {
-    const { dispatch } = this.props; 
-    const action = {
-      type: "DELETE_BARREL",
-      id: id
+    handleDeletingBarrel = (id) => {
+      const { dispatch } = this.props;
+      const action = a.deleteBarrel(id);
+      dispatch(action);
+      this.setState({selectedBarrel: null});
     }
-    dispatch(action);
-    this.setState({ selectedBarrel: null });
-
   }
 
   handleSellingBottleFromBarrel = (id) => {
@@ -84,22 +63,13 @@ class BarrelControl extends React.Component {
 
   handleEditingBarrelInList = (barrelToEdit) => {
     const { dispatch } = this.props;
-    const { wineType, name, price, alcoholContent, quantity, id } = barrelToEdit; 
-    const action = {
-        type: "ADD_BARREL",
-        wineType: wineType,
-        name: name,
-        price: price,
-        alcoholContent: alcoholContent,
-        quantity: quantity,
-        id: id,
-      }
-      dispatch(action);
-      this.setState({
-        editing: false,
-        selectedBarrel: null
-      });
-    }
+    const action = a.addBarrel(BarrelToEdit);
+    dispatch(action);
+    this.setState({
+      editing: false,
+      selectedBarrel: null
+    });
+  }
   
 
 
