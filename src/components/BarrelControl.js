@@ -4,6 +4,7 @@ import BarrelList from "./BarrelList";
 import EditBarrelForm from './EditBarrelForm';
 import BarrelDetail from './BarrelDetail';
 import { connect } from 'react-redux';
+import { act } from "react-dom/test-utils";
 
 class BarrelControl extends React.Component {
   constructor(props) {
@@ -51,11 +52,14 @@ class BarrelControl extends React.Component {
   }
 
   handleDeletingBarrel = (id) => {
-    const newMasterBarrelList = this.state.masterBarrelList.filter(barrel => barrel.id !== id);
-    this.setState({
-      masterBarrelList: newMasterBarrelList,
-      selectedBarrel: null
-    });
+    const { dispatch } = this. props; 
+    const action = {
+      type: "DELETE_BARREL",
+      id: id
+    }
+    dispatch(action);
+    this.setState({ selectedTicket: null });
+
   }
 
   handleSellingBottleFromBarrel = (id) => {
