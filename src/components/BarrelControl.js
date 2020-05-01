@@ -20,14 +20,15 @@ class BarrelControl extends React.Component {
   handleClick = () => {
     if(this.state.selectedBarrel != null) {
       this.setState({
-        formVisibleOnPage: false,
         selectedBarrel: null,
         editing: false
       });
     } else {
-      this.setState(prevState => ({
-        formVisibleOnPage: !prevState.formVisibleOnPage
-      }));
+      const { dispatch } = this.props;
+      const action = {
+        type: "TOGGLE_FORM"
+      }
+      dispatch(action);
     }
   }
 
@@ -44,7 +45,10 @@ class BarrelControl extends React.Component {
       id: id,
     }
     dispatch(action);
-    this.setState({ formVisibleOnPage: false });
+    const action2 = {
+      type: "TOGGLE_FORM"
+    }
+    dispatch(action2);
   }
 
   handleChangingSelectedBarrel = (id) => {
