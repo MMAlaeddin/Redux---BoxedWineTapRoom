@@ -118,7 +118,7 @@ class BarrelControl extends React.Component {
         onClickingDelete = {this.handleDeletingBarrel}
         onClickingEdit = {this.handleEditClick} />
       buttonText = "return to Barrels";
-    } else if (this.state.formVisibleOnPage) {
+    } else if (this.props.formVisibleOnPage) {
       currentlyVisibleState = <NewBarrelForm 
         onNewBarrelCreation={this.handleAddingNewBarrelToList}/>
       buttonText = "return to Barrels";
