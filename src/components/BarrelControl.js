@@ -74,15 +74,24 @@ class BarrelControl extends React.Component {
   }
 
   handleEditingBarrelInList = (barrelToEdit) => {
-    const editedMasterBarrelList = this.state.masterBarrelList
-      .filter(barrel => barrel.id !== this.state.selectedBarrel.id)
-      .concat(barrelToEdit);
-    this.setState({
-      masterBarrelList: editedMasterBarrelList,
-      editing: false,
-      selectedBarrel: null
-    });
-  }
+    const { dispatch } = this.props;
+    const { wineType, name, price, alcoholContent, quantity, id } = barrelToEdit; 
+    const action = {
+        type: "ADD_BARREL",
+        wineType: wineType,
+        name: name,
+        price: price,
+        alcoholContent: alcoholContent,
+        quantity: quantity,
+        id: id,
+      }
+      dispatch(action);
+      this.setState({
+        editing: false,
+        selectedBarrel: null
+      });
+    }
+  
 
 
   render() {
