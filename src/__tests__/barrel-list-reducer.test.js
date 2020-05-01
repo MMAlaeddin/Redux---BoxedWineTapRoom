@@ -39,4 +39,20 @@ describe ("barrelListReducer", () => {
     });
   });
 
+  test ("Should successfully delete a barrel", () => {
+    action = {
+      type: "DELETE_BARREL",
+      id: 1
+    };
+
+    expect (barrelListReducer(currentState, action)).toEqual({
+      2: { wineType: "Chardonnay",
+        name: "Yellow Farms",
+        price: "$80",
+        alcoholContent: "20%",
+        quantity: 150,
+        id: 2 }
+    });
+  });
+
 });
