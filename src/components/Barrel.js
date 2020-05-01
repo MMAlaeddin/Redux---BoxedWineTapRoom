@@ -1,5 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+import Container from 'react-bootstrap/Container';
 
 function Barrel(props){
 
@@ -17,16 +20,22 @@ function Barrel(props){
   
   return (
     <React.Fragment>
-      <div onClick = {() => props.whenBarrelClicked(props.id)}>
-      <div id="list" style={itemStyles}>
-      <h3>Type of Wine: {props.wineType}</h3>
-      <h5>Vinyard Name: {props.name}</h5>
-      <h5>Cost: ${props.price}</h5>
-      <h5>ABV: {props.alcoholContent}%</h5>
-      <h5>Amount of bottles in stock: {props.quantity}</h5>
-      <button onClick={()=> props.whenSellBottleClicked(props.id)} type="submit">Sell Bottle</button>
-      </div>
-      </div>
+      <Container>
+        <Row>
+          <Col>
+            <div onClick = {() => props.whenBarrelClicked(props.id)}>
+            <div id="list" style={itemStyles}>
+            <h3>Type of Wine: {props.wineType}</h3>
+            <h5>Vinyard Name: {props.name}</h5>
+            <h5>Cost: ${props.price}</h5>
+            <h5>ABV: {props.alcoholContent}%</h5>
+            <h5>Amount of bottles in stock: {props.quantity}</h5>
+            <button onClick={()=> props.whenSellBottleClicked(props.id)} type="submit">Sell Bottle</button>
+            </div>
+            </div>
+          </Col>
+        </Row>
+      </Container>
     </React.Fragment>
   );
 }

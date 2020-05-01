@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from "./Header.js";
 import BarrelControl from "./BarrelControl";
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
