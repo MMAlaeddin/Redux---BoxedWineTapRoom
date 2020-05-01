@@ -121,7 +121,7 @@ class BarrelControl extends React.Component {
       buttonText = "return to Barrels";
     } else {
       currentlyVisibleState = <BarrelList 
-        barrelList={this.state.masterBarrelList} 
+        barrelList={this.props.masterBarrelList} 
         onBarrelSelection={this.handleChangingSelectedBarrel}
         onClickingSellBottle={this.handleSellingBottleFromBarrel} />
       buttonText = "Add a Barrel";
