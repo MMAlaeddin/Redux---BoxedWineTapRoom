@@ -20,6 +20,17 @@ A Redux React boxed wine tap room app that allows user to track their barrels of
 * User may view amount of content left in keg.
 * User may deduct pints from total keg content.
 
+## Known Bugs
+
+No known bugs
+
+## Support and contact details
+
+Mariam Alaeddin: maralaeddin@gmail.com
+
+## Technologies Used
+
+Redux, React, UUID, Git, HTML, CSS, JavaScript, jQuery, NPM, webpack, Bootstrap, Webpack
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -89,3 +100,9 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+### License
+
+*MIT License*
+
+Copyright (c) 2020 **_{Mariam Alaeddin}_**
