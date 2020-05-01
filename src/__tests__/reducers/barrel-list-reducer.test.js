@@ -1,4 +1,4 @@
-import barrelListReducer from "../reducers/barrel-list-reducer";
+import barrelListReducer from "../../reducers/barrel-list-reducer";
 
 describe ("barrelListReducer", () => {
 
