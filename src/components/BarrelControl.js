@@ -12,7 +12,6 @@ class BarrelControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      formVisibleOnPage: false,
       selectedBarrel: null,
       editing: false
     };
@@ -60,7 +59,7 @@ class BarrelControl extends React.Component {
       id: id
     }
     dispatch(action);
-    this.setState({ selectedTicket: null });
+    this.setState({ selectedBarrel: null });
 
   }
 
@@ -143,9 +142,10 @@ BarrelControl.propTypes = {
   masterBarrelList: PropTypes.object
 };
 
-const mapStateToProps =  state => {
+const mapStateToProps = state => {
   return {
-    masterBarrelList: state
+    masterBarrelList: state.masterBarrelList,
+    formVisibleOnPage: state.formVisibleOnPage
   }
 }
 
