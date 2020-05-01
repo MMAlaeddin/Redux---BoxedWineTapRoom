@@ -2,7 +2,7 @@ import React from "react";
 import Barrel from "./Barrel";
 import PropTypes from "prop-types";
 
-function TicketList(props){
+function BarrelList(props){
   return (
     <React.Fragment>
       <hr />
