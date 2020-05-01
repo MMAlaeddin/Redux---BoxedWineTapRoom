@@ -10,15 +10,15 @@ function Barrel(props){
     textAlign: 'center',
     padding: '2%',
     marginBottom: '3em',
-    color: 'white',
+    color: 'purple',
     background: 'gray',
-    opacity: 0.7,
+    // opacity: 0.7,
   }
   
   return (
     <React.Fragment>
       <div onClick = {() => props.whenBarrelClicked(props.id)}>
-      <div style={itemStyles}>
+      <div id="list" style={itemStyles}>
       <h3>Type of Wine: {props.wineType}</h3>
       <h5>Vinyard Name: {props.name}</h5>
       <h5>Cost: ${props.price}</h5>

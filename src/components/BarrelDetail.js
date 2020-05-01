@@ -4,14 +4,30 @@ import PropTypes from "prop-types";
 function BarrelDetail(props){
   const { barrel, onClickingDelete } = props;
 
+  const itemDetail = {
+    height: '350px',
+    width: '150px',
+    border: '10px solid purple',
+    textAlign: 'center',
+    padding: '1%',
+    marginBottom: '3em',
+    color: 'white',
+    background: 'gray',
+    // opacity: 0.7,
+  }
   return (
     <React.Fragment>
-        <h1>Vinyard Name: {barrel.name}</h1>
-        <p>Type of Wine: {barrel.wineType}</p>
-        <p>Price: ${barrel.price}</p>
-        <p>ABV: {barrel.alcoholContent}%</p>
-        <p>Quantity: {barrel.quantity}</p>
-
+        <div id="list" style={itemDetail}>
+        <h3>Vinyard Name:<strong>{barrel.name}</strong></h3>
+        <hr/>
+        <p>Type of Wine: <strong>{barrel.wineType}</strong></p>
+        <p>Price:</p>
+        <p><strong>${barrel.price}</strong></p>
+        <p>ABV:</p>
+        <p><strong>{barrel.alcoholContent}%</strong></p>
+        <p>Quantity:</p>
+        <p><strong>{barrel.quantity}</strong></p>
+        </div>
         <button onClick={()=> onClickingDelete(barrel.id)}>Remove Barrel</button> */}
         <button onClick={ props.onClickingEdit }>Update Barrels</button>
     </React.Fragment>
