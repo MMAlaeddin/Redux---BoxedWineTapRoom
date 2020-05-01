@@ -8,12 +8,13 @@ function Barrel(props){
   const itemStyles = {
     height: '270px',
     width: '150px',
-    border: '10px solid purple',
+    border: '10px dotted purple',
     textAlign: 'center',
     padding: '2%',
     marginBottom: '3em',
     color: 'purple',
     background: 'gray',
+    radius: "20%",
     // opacity: 0.7,
   }
   
