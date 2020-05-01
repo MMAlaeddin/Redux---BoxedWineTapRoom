@@ -7,6 +7,11 @@ export const toggleForm = () => ({
   type: 'TOGGLE_FORM'
 });
 
+export const sellBarrel = (id) => ({
+  type: "SELL_BARREL",
+  id: id
+});
+
 export const addBarrel = (barrel) => {
   const { wineType, name, price, alcoholContent, quantity, id } = barrel;
   return {

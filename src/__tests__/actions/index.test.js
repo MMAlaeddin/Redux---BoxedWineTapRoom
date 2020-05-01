@@ -28,5 +28,11 @@ describe('barrel actions', () => {
     quantity: 150,
     id: 1
     });
-  })
+  });
+  it("should create SELL_BARREL action", () => {
+    expect (actions.sellBarrel(1)).toEqual({
+      type: "SELL_BARREL",
+      id: 1
+    });
+  });
 });
