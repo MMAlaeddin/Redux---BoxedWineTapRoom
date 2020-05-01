@@ -38,12 +38,11 @@ class BarrelControl extends React.Component {
   }
 
   handleDeletingBarrel = (id) => {
-    handleDeletingBarrel = (id) => {
       const { dispatch } = this.props;
       const action = a.deleteBarrel(id);
       dispatch(action);
       this.setState({selectedBarrel: null});
-    }
+    
   }
 
   handleSellingBottleFromBarrel = (id) => {
@@ -63,7 +62,7 @@ class BarrelControl extends React.Component {
 
   handleEditingBarrelInList = (barrelToEdit) => {
     const { dispatch } = this.props;
-    const action = a.addBarrel(BarrelToEdit);
+    const action = a.addBarrel(barrelToEdit);
     dispatch(action);
     this.setState({
       editing: false,
