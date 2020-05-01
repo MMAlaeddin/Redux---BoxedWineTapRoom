@@ -2,15 +2,16 @@
 
 
 
-#### By: **Mariam Alaeddin**, April 24, 2020
+#### By: **Mariam Alaeddin**, May 1, 2020
 
 ## Description
 
-A tap room in React where a bar or kombucha store can track their kegs.
+A Redux React boxed wine tap room app that allows user to track their barrels of wine.
 
 ## Component Tree
 
-<img src="./img/componenttree.png">
+<img width="898" alt="Screen Shot 2020-04-24 at 9 00 33 AM" src="https://user-images.githubusercontent.com/58479140/80815656-edcf0c00-8b82-11ea-9099-163fb3f01134.png">
+
 
 ## Specs
 
