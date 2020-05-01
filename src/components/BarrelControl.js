@@ -3,13 +3,13 @@ import NewBarrelForm from "./NewBarrelForm";
 import BarrelList from "./BarrelList";
 import EditBarrelForm from './EditBarrelForm';
 import BarrelDetail from './BarrelDetail';
+import { connect } from 'react-redux';
 
 class BarrelControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       formVisibleOnPage: false,
-      masterBarrelList: [],
       selectedBarrel: null,
       editing: false
     };
@@ -30,8 +30,18 @@ class BarrelControl extends React.Component {
   }
 
   handleAddingNewBarrelToList = (newBarrel) => {
-    const newMasterBarrelList = this.state.masterBarrelList.concat(newBarrel);
-    this.setState({ masterBarrelList: newMasterBarrelList });
+    const { dispatch } = this.props;
+    const { wineType, name, price, alcoholContent, quantity, id } = newBarrel;
+    const action = {
+      type: "ADD_BARREL",
+      wineType: wineType,
+      name: name,
+      price: price,
+      alcoholContent: alcoholContent,
+      quantity: quantity,
+      id: id,
+    }
+    dispatch(action);
     this.setState({ formVisibleOnPage: false });
   }
 
@@ -111,5 +121,7 @@ class BarrelControl extends React.Component {
     );
   }
 }
+
+BarrelControl = connect()(BarrelControl);
 
 export default BarrelControl; 
