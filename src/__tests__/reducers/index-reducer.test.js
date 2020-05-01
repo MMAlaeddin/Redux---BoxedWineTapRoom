@@ -20,7 +20,27 @@ describe ("rootReducer", () => {
     expect(store.getState().formVisibleOnPage).toEqual(formVisibleReducer(undefined, { type: null }));
   });
 
+  test ("Check that initial state of barrelListReducer matches root reducer", () => {
+    const action = {
+      type: "ADD_BARREL",
+      wineType: "Cab",
+      name: "Purple Farms",
+      price: "$30",
+      alcoholContent: "15%",
+      quantity: 150,
+      id: 1
+    }
+    store.dispatch(action);
+    expect(store.getState().masterBarrelList).toEqual(barrelListReducer(undefined, action));
+  });
 
+  test ("Check that initial sate of forVisible reducer matches root reducer", () => {
+    const action = {
+      type: "TOGGLE_FORM"
+    }
+    store.dispatch(action);
+    expect(store.getState().formVisibleOnPage).toEqual(formVisibleReducer(undefined, action));
+  });
 });
 
 export default rootReducer;
